@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9e07f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #f5f5dc;
+            padding: 120px;
+            border: 2px solid black;
+            border-radius: 50px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        #counter-value {
+            font-size: 72px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 1px solid #333;
+        }
+
+        button:hover {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>COUNTER</h1>
+        <div id="counter-value">0</div>
+        <button id="increase">Increase</button>
+        <button id="decrease">Decrease</button>
+    </div>
+
+    <script>
+        let counter = 0;
+
+        const counterValue = document.getElementById('counter-value');
+        const increaseButton = document.getElementById('increase');
+        const decreaseButton = document.getElementById('decrease');
+
+        increaseButton.addEventListener('click', () => {
+            counter++;
+            updateCounter();
+        });
+
+        decreaseButton.addEventListener('click', () => {
+            counter--;
+            updateCounter();
+        });
+
+        function updateCounter() {
+            counterValue.textContent = counter;
+        }
+    </script>
+</body>
+</html>
